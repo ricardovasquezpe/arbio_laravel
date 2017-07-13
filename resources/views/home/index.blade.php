@@ -44,7 +44,7 @@
             <li class="link-bottom"><a href="#contact_us">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Login</a></li>
+            <li><a href="login" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Login</a></li>
           </ul>
         </div>
       </div>

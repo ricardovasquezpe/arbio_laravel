@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('homepage/index');
+    return view('home/index');
 });
+
+Route::get('/login', 'Home\LoginController@index');
