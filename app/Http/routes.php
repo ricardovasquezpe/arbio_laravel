@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/login', 'Home\LoginController@index');
+Route::post('/login/loginMethod', 'Home\LoginController@login');

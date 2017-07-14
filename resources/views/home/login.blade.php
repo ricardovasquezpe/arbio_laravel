@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('homepage/components/mdl/css/material.min.css') }}">
     <link rel="stylesheet" href="{{ asset('homepage/css/m-p.css') }}">
     <link rel="stylesheet" href="{{ asset('homepage/css/arbi.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top text-center navbarcolor">
@@ -66,7 +67,7 @@
               </div>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Username" aria-describedby="nameN">
+                  <input type="text" class="form-control" placeholder="Username" aria-describedby="nameN" id="username">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-person"></i></button>
                   </span>
@@ -74,7 +75,7 @@
               </div>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control"  placeholder="Password" aria-describedby="nameN">
+                  <input type="text" class="form-control"  placeholder="Password" aria-describedby="nameN" id="password">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-lock"></i></button>
                   </span>
@@ -87,7 +88,7 @@
                 </label>
               </div>
               <div class="col-md-12 text-center">
-                <a href="Admin/index.html"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45"><i class="mdi mdi-input line"></i>Sign in</button></a>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45" onclick="login()"><i class="mdi mdi-input line"></i>Sign in</button>
               </div>
             </div>
           </div>
@@ -159,5 +160,6 @@
   <script src="{{ asset('homepage/components/wizard/js/jquery.bootstrap.wizard.min.js') }}"></script>
   <script src="{{ asset('homepage/components/OwlCarousel2-2.2.1/dist/owl.carousel.min.js') }}"></script>
   <script src="{{ asset('homepage/js/jspricing.js') }}"></script>
+  <script src="{{ asset('homepage/js/jslogin.js') }}"></script>
 </body>
 </html>
