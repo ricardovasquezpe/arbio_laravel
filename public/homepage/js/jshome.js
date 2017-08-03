@@ -51,3 +51,32 @@ function resizeSection() {
     var top = $( window ).height();
 	$(".section-home").css('height', top);
 }
+
+function register(){
+	$("#register_error_message").html(null);
+	firstname = $("#first_name_reg").val();
+	lastname  = $("#last_name_reg").val();
+	email     = $("#email_reg").val();
+
+	$.ajax({
+		data : {
+			_token    : $('meta[name="csrf-token"]').attr('content'),
+			firstname : firstname,
+			lastname  : lastname,
+			email     : email
+		},
+		url : 'home/registerMethod',
+		async : true,
+		type : 'POST'
+	}).done(
+	function(data) {
+		data = JSON.parse(data);
+		if(data.status == true){
+			$("#first_name_reg").val(null);
+			$("#last_name_reg").val(null);
+			$("#email_reg").val(null);
+		}else{
+			$("#register_error_message").html(data.msj);
+		}
+	});
+}

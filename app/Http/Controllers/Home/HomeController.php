@@ -19,21 +19,21 @@ class HomeController extends Controller {
         $lastname  = $_POST['lastname'];
         $email     = $_POST['email'];
         
-        $res = $client->post(Config::get('constants.api_config.base').Config::get('constants.api_methods.login_api'), [
+        $client = new Client();
+        $res = $client->post(Config::get('constants.api_config.base').Config::get('constants.api_methods.registration_api'), [
             'json' => ['firstName' => $firstname,
                        'lastName'  => $lastname,
                        'email'     => $email]
         ]);
-        /*$msj  = "";
+        $msj  = "";
         $body = json_decode($res->getBody());
         if(!$body->success){
             $msj = $body->error->message;
         }else{
-            $data['url'] = "index.php";
-            Session::set('token', $body->data->api_token);
+            $msj = "Thanks for join us";
         }
         $data['msj']    = $msj;
         $data['status'] = $body->success;
-        echo json_encode(array_map('utf8_encode', $data));*/
+        echo json_encode(array_map('utf8_encode', $data));
     }
 }

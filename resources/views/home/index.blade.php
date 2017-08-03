@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('homepage/components/mdl/css/material.min.css') }}">
     <link rel="stylesheet" href="{{ asset('homepage/css/m-p.css') }}">
     <link rel="stylesheet" href="{{ asset('homepage/css/arbi.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top text-center">
@@ -72,7 +73,7 @@
                 </div>
                 <div class="col-md-12">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="First name" aria-describedby="name1">
+                    <input type="text" class="form-control" placeholder="First name" aria-describedby="name1" id="first_name_reg">
                     <span class="input-group-btn">
                       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                     </span>
@@ -80,7 +81,7 @@
                 </div>
                 <div class="col-md-12">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Last name" aria-describedby="name2">
+                    <input type="text" class="form-control" placeholder="Last name" aria-describedby="name2" id="last_name_reg">
                     <span class="input-group-btn">
                       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                     </span>
@@ -88,14 +89,17 @@
                 </div>
                 <div class="col-md-12 m-b-16">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email" aria-describedby="name3">
+                    <input type="text" class="form-control" placeholder="Email" aria-describedby="name3" id="email_reg">
                     <span class="input-group-btn">
                       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-email"></i></button>
                     </span>
                   </div>
                 </div>
+                <div class="col-md-12 text-left">
+                  <p id="register_error_message" style="color:red"></p>
+                </div>
                 <div class="col-md-12 text-center">
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0"><i class="fa fa-paper-plane-o"></i>Start trial</button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="register()"><i class="fa fa-paper-plane-o"></i>Start trial</button>
                 </div>
               </div>
             </div>

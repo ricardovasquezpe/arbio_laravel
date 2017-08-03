@@ -12,5 +12,7 @@
 */
 
 Route::get('/', 'Home\HomeController@index');
+Route::post('/home/registerMethod', 'Home\HomeController@register');
+
 Route::get('/login', 'Home\LoginController@index');
 Route::post('/login/loginMethod', 'Home\LoginController@login');

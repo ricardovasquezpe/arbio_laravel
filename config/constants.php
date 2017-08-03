@@ -5,6 +5,7 @@ return [
         'version' => 'v1'
     ],
     'api_methods' => [
-        'login_api'    => 'login'
+        'login_api'        => 'login',
+        'registration_api' => 'registration'
     ]
 ];
