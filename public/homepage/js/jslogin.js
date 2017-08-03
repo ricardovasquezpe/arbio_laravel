@@ -14,11 +14,10 @@ function login(){
 	}).done(
 	function(data) {
 		data = JSON.parse(data);
-		console.log(data);
-		if(data.pass == true){
-			//redirect();
+		if(data.status == true){
+			console.log("entro: ");
 		}else{
-			//error
+			console.log("NO entro" + data.msj);
 		}
 	});
 }
