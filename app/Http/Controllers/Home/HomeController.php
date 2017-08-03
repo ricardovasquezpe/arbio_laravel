@@ -7,22 +7,24 @@ use Session;
 use GuzzleHttp\Client;
 use App\Http\Controllers\Controller;
 
-class LoginController extends Controller {
+class HomeController extends Controller {
 
     public function index()
     {
-        return view('home.login');
+        return view('home.index');
     }
 
-    public function login(){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $client = new Client();
+    public function register(){
+        $firstname = $_POST['firstname'];
+        $lastname  = $_POST['lastname'];
+        $email     = $_POST['email'];
+        
         $res = $client->post(Config::get('constants.api_config.base').Config::get('constants.api_methods.login_api'), [
-            'json' => ['email'    => $username,
-                       'password' => $password]
+            'json' => ['firstName' => $firstname,
+                       'lastName'  => $lastname,
+                       'email'     => $email]
         ]);
-        $msj  = "";
+        /*$msj  = "";
         $body = json_decode($res->getBody());
         if(!$body->success){
             $msj = $body->error->message;
@@ -32,6 +34,6 @@ class LoginController extends Controller {
         }
         $data['msj']    = $msj;
         $data['status'] = $body->success;
-        echo json_encode(array_map('utf8_encode', $data));
+        echo json_encode(array_map('utf8_encode', $data));*/
     }
 }
