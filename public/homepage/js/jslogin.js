@@ -1,4 +1,5 @@
 function login(){
+	$("#error_message").html(null);
 	username = $("#username").val();
 	password = $("#password").val();
 
@@ -15,9 +16,9 @@ function login(){
 	function(data) {
 		data = JSON.parse(data);
 		if(data.status == true){
-			console.log("entro: ");
+			window.location.href = data.url;
 		}else{
-			console.log("NO entro" + data.msj);
+			$("#error_message").html(data.msj);
 		}
 	});
 }

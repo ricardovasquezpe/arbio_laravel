@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use Config;
+use Session;
 use GuzzleHttp\Client;
 use App\Http\Controllers\Controller;
 
@@ -25,6 +26,9 @@ class LoginController extends Controller {
         $body = json_decode($res->getBody());
         if(!$body->success){
             $msj = $body->error->message;
+        }else{
+            $data['url'] = "index.php";
+            Session::set('token', $body->data->api_token);
         }
         $data['msj']    = $msj;
         $data['status'] = $body->success;
