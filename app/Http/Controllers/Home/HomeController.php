@@ -12,7 +12,6 @@ class HomeController extends Controller {
 
     public function index()
     {
-        //$this->callMeBack();
         return view('home.index');
     }
 
@@ -51,7 +50,6 @@ class HomeController extends Controller {
             Mail::send('home.email.call-me-back', array('key' => 'value'), function($message)
             {
                 $message->from('us@example.com', 'Laravel');
-
                 $message->to('foo@example.com')->cc('bar@example.com');
             });
 
