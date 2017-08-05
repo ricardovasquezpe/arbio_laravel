@@ -80,3 +80,40 @@ function register(){
 		}
 	});
 }
+
+function call_me_back(from){
+	fullname = $("#fullname_schedule_modal").val();
+	company  = $("#comapny_schedule_modal").val();
+	phone    = $("#phone_schedule_modal").val();
+	if(from == 1){ //SECTION
+		fullname = $("#fullname_schedule_section").val();
+		company  = $("#comapny_schedule_section").val();
+		phone    = $("#phone_schedule_section").val();
+	}
+	
+
+	$.ajax({
+		data : {
+			_token    : $('meta[name="csrf-token"]').attr('content'),
+			fullname : fullname,
+			company  : company,
+			phone    : phone,
+			type     : from
+		},
+		url : 'home/callMeBackMethod',
+		async : true,
+		type : 'POST'
+	}).done(
+	function(data) {
+		data = JSON.parse(data);
+		console.log(data);
+		/*if(data.status == true){
+			$("#first_name_reg").val(null);
+			$("#last_name_reg").val(null);
+			$("#email_reg").val(null);
+		}else{
+			$("#register_error_message").html(data.msj);
+		}*/
+	});
+
+}

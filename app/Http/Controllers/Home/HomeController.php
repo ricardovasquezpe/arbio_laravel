@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Config;
 use Session;
+use Mail;
 use GuzzleHttp\Client;
 use App\Http\Controllers\Controller;
 
@@ -11,6 +12,7 @@ class HomeController extends Controller {
 
     public function index()
     {
+        //$this->callMeBack();
         return view('home.index');
     }
 
@@ -34,6 +36,27 @@ class HomeController extends Controller {
         }
         $data['msj']    = $msj;
         $data['status'] = $body->success;
+        echo json_encode(array_map('utf8_encode', $data));
+    }
+
+    public function callMeBack(){
+        $data['status'] = false;
+        $fullname = $_POST['fullname'];
+        $company  = $_POST['company'];
+        $phone    = $_POST['phone'];
+        $type     = $_POST['type'];
+        if(empty($fullname) || empty($company) || empty($phone)){
+            $data['message'] = "Please fill all the fields";
+        }else{
+            Mail::send('home.email.call-me-back', array('key' => 'value'), function($message)
+            {
+                $message->from('us@example.com', 'Laravel');
+
+                $message->to('foo@example.com')->cc('bar@example.com');
+            });
+
+            $data['message'] = "Thanks";
+        }
         echo json_encode(array_map('utf8_encode', $data));
     }
 }

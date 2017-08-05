@@ -231,7 +231,7 @@
             <div class="mdl-card__supporting-text">
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Full name" aria-describedby="nameN">
+                  <input type="text" class="form-control" placeholder="Full name" aria-describedby="nameN" id="fullname_schedule_section">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                   </span>
@@ -239,7 +239,7 @@
               </div>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN">
+                  <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN" id="comapny_schedule_section">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                   </span>
@@ -247,14 +247,14 @@
               </div>
               <div class="col-md-12 m-b-16">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Phone number incl. landcode" aria-describedby="nameN">
+                  <input type="text" class="form-control" placeholder="Phone number incl. landcode" aria-describedby="nameN" id="phone_schedule_section">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                   </span>
                 </div>
               </div>
               <div class="col-md-12 text-center">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0"><i class="fa fa-paper-plane-o"></i>Call me back!</button>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="call_me_back(1)"><i class="fa fa-paper-plane-o"></i>Call me back!</button>
               </div>
             </div>
           </div>
@@ -462,7 +462,7 @@
                 <div class="mdl-card__supporting-text">
                   <div class="col-md-12">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Full name" aria-describedby="nameN">
+                      <input type="text" class="form-control" placeholder="Full name" aria-describedby="nameN" id="fullname_schedule_modal">
                       <span class="input-group-btn">
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                       </span>
@@ -470,7 +470,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN">
+                      <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN" id="comapny_schedule_modal">
                       <span class="input-group-btn">
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                       </span>
@@ -478,14 +478,14 @@
                   </div>
                   <div class="col-md-12 m-b-16">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Phone number incl. landcode" aria-describedby="nameN">
+                      <input type="text" class="form-control" placeholder="Phone number incl. landcode" aria-describedby="nameN" id="phone_schedule_modal">
                       <span class="input-group-btn">
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                       </span>
                     </div>
                   </div>
                   <div class="col-md-12 text-center">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0"><i class="fa fa-paper-plane-o"></i>Call me back!</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="call_me_back(2)"><i class="fa fa-paper-plane-o"></i>Call me back!</button>
                   </div>
                 </div>
               </div>

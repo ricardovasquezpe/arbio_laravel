@@ -13,6 +13,7 @@
 
 Route::get('/', 'Home\HomeController@index');
 Route::post('/home/registerMethod', 'Home\HomeController@register');
+Route::post('/home/callMeBackMethod', 'Home\HomeController@callMeBack');
 
 Route::get('/login', 'Home\LoginController@index');
 Route::post('/login/loginMethod', 'Home\LoginController@login');
