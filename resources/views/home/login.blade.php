@@ -67,7 +67,7 @@
               </div>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Username" aria-describedby="nameN" id="username">
+                  <input type="text" class="form-control" placeholder="Username" aria-describedby="nameN" id="username" value="{{ $username }}">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-person"></i></button>
                   </span>
@@ -75,7 +75,7 @@
               </div>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control"  placeholder="Password" aria-describedby="nameN" id="password">
+                  <input type="password" class="form-control"  placeholder="Password" aria-describedby="nameN" id="password" value="{{ $password }}">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-lock"></i></button>
                   </span>
@@ -85,8 +85,8 @@
                 <p id="error_message" style="color:red"></p>
               </div>
               <div class="col-md-12 text-left">
-                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-                  <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
+                  <input type="checkbox" id="remember" class="mdl-checkbox__input" {{ $remember }}>
                   <span class="mdl-checkbox__label">Remember me</a></span>
                 </label>
               </div>

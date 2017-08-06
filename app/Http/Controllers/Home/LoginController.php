@@ -11,7 +11,15 @@ class LoginController extends Controller {
 
     public function index()
     {
-        return view('home.login');
+        $remember = (Session::get('remember') ==  "1") ? "checked" : "";
+        $username = "";
+        $password = "";
+        if($remember == "checked"){
+            $username = Session::get('username_remember');
+            $password = Session::get('password_remember');
+        }
+
+        return view('home.login',  ['username' => $username, 'password' => $password, 'remember' => $remember]);
     }
 
     public function login(){
@@ -29,6 +37,15 @@ class LoginController extends Controller {
         }else{
             $data['url'] = "index.php";
             Session::set('token', $body->data->api_token);
+            $remember = $_POST['remember'];
+            if($remember == "1"){
+                Session::set('username_remember', $username);
+                Session::set('password_remember', $password);
+            }else{
+                Session::forget('username_remember');
+                Session::forget('password_remember');
+            }
+            Session::set('remember', $remember);
         }
         $data['msj']    = $msj;
         $data['status'] = $body->success;

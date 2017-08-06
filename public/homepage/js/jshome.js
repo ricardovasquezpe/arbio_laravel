@@ -112,19 +112,19 @@ function call_me_back(from){
 	function(data) {
 		data = JSON.parse(data);
 		if(data.status == true){
-			if(from == 1){
+			if(from == 1){ //SECTION
 				$("#fullname_schedule_section").val(null);
 				$("#company_schedule_section").val(null);
 				$("#phone_schedule_section").val(null);
-			}else{
+			}else{ //MODAL
 				$("#fullname_schedule_modal").val(null);
 				$("#company_schedule_modal").val(null);
 				$("#phone_schedule_modal").val(null);
 			}
 		}else{
-			if(from == 1){
+			if(from == 1){ //SECTION
 				$("#schedule_section_error_message").html(data.msj);
-			}else{
+			}else{ //MODAL
 				$("#schedule_modal_error_message").html(data.msj);
 			}
 		}
