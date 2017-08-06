@@ -45,7 +45,7 @@ class HomeController extends Controller {
         $phone    = $_POST['phone'];
         $type     = $_POST['type'];
         if(empty($fullname) || empty($company) || empty($phone)){
-            $data['message'] = "Please fill all the fields";
+            $data['msj'] = "Please fill all the fields";
         }else{
             Mail::send('home.email.call-me-back', array('key' => 'value'), function($message)
             {
@@ -53,7 +53,29 @@ class HomeController extends Controller {
                 $message->to('foo@example.com')->cc('bar@example.com');
             });
 
-            $data['message'] = "Thanks";
+            $data['status'] = true;
+            $data['msj'] = "Thanks";
+        }
+        echo json_encode(array_map('utf8_encode', $data));
+    }
+
+    public function contactUs(){
+        $data['status'] = false;
+        $fullname = $_POST['fullname'];
+        $company  = $_POST['company'];
+        $phone    = $_POST['phone'];
+        $message  = $_POST['message'];
+        if(empty($fullname) || empty($company) || empty($phone) || empty($message)){
+            $data['msj'] = "Please fill all the fields";
+        }else{
+            Mail::send('home.email.call-me-back', array('key' => 'value'), function($message)
+            {
+                $message->from('us@example.com', 'Laravel');
+                $message->to('foo@example.com')->cc('bar@example.com');
+            });
+
+            $data['status'] = true;
+            $data['msj'] = "Thanks";
         }
         echo json_encode(array_map('utf8_encode', $data));
     }

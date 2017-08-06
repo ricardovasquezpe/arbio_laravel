@@ -82,16 +82,21 @@ function register(){
 }
 
 function call_me_back(from){
-	fullname = $("#fullname_schedule_modal").val();
-	company  = $("#comapny_schedule_modal").val();
-	phone    = $("#phone_schedule_modal").val();
+	fullname = null;
+	company  = null;
+	phone    = null;
 	if(from == 1){ //SECTION
+		$("#schedule_section_error_message").html(null);
 		fullname = $("#fullname_schedule_section").val();
-		company  = $("#comapny_schedule_section").val();
+		company  = $("#company_schedule_section").val();
 		phone    = $("#phone_schedule_section").val();
+	}else{ //MODAL
+		$("#schedule_modal_error_message").html(null);
+		fullname = $("#fullname_schedule_modal").val();
+		company  = $("#company_schedule_modal").val();
+		phone    = $("#phone_schedule_modal").val();
 	}
 	
-
 	$.ajax({
 		data : {
 			_token    : $('meta[name="csrf-token"]').attr('content'),
@@ -106,14 +111,54 @@ function call_me_back(from){
 	}).done(
 	function(data) {
 		data = JSON.parse(data);
-		console.log(data);
-		/*if(data.status == true){
-			$("#first_name_reg").val(null);
-			$("#last_name_reg").val(null);
-			$("#email_reg").val(null);
+		if(data.status == true){
+			if(from == 1){
+				$("#fullname_schedule_section").val(null);
+				$("#company_schedule_section").val(null);
+				$("#phone_schedule_section").val(null);
+			}else{
+				$("#fullname_schedule_modal").val(null);
+				$("#company_schedule_modal").val(null);
+				$("#phone_schedule_modal").val(null);
+			}
 		}else{
-			$("#register_error_message").html(data.msj);
-		}*/
+			if(from == 1){
+				$("#schedule_section_error_message").html(data.msj);
+			}else{
+				$("#schedule_modal_error_message").html(data.msj);
+			}
+		}
 	});
+}
 
+function contact_us(){
+	$("#contact_error_message").html(null);
+	fullname = $("#fullname_contact").val();
+	company  = $("#company_contact").val();
+	phone    = $("#phone_contact").val();
+	message  = $("#message_contact").val();
+
+	$.ajax({
+		data : {
+			_token   : $('meta[name="csrf-token"]').attr('content'),
+			fullname : fullname,
+			company  : company,
+			phone    : phone,
+			message  : message
+		},
+		url : 'home/contactUsMethod',
+		async : true,
+		type : 'POST'
+	}).done(
+	function(data) {
+		data = JSON.parse(data);
+		if(data.status == true){
+			$("#fullname_contact").val(null);
+			$("#company_contact").val(null);
+			$("#phone_contact").val(null);
+			$("#message_contact").val(null);
+		}else{
+			$("#contact_error_message").html(data.msj);
+		}
+	});
 }

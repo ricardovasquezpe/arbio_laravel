@@ -239,7 +239,7 @@
               </div>
               <div class="col-md-12">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN" id="comapny_schedule_section">
+                  <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN" id="company_schedule_section">
                   <span class="input-group-btn">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                   </span>
@@ -252,6 +252,9 @@
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                   </span>
                 </div>
+              </div>
+              <div class="col-md-12 text-left">
+                <p id="schedule_section_error_message" style="color:red"></p>
               </div>
               <div class="col-md-12 text-center">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="call_me_back(1)"><i class="fa fa-paper-plane-o"></i>Call me back!</button>
@@ -318,7 +321,7 @@
                   <li>KEY ACCOUNT MANAGER</li>
                 </ul>
               </div>
-              <a href="pricing.html"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0">CONTACT US</button></a>
+              <a data-toggle="modal" data-target="#Schedule"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0">CONTACT US</button></a>
             </div>
             <div class="col-md-12 m-t-30">
               <p>Are you a small Designer or Developer looking for smaller plans, take a look at our Micro-plans.</p>
@@ -396,34 +399,37 @@
             <div class="col-sm-6 p-0">
               <div class="col-sm-12 mdl-input-group">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="sample3">
+                  <input class="mdl-textfield__input" type="text" id="fullname_contact">
                   <label class="mdl-textfield__label" for="sample3">Name</label>
                 </div>
               </div>
               <div class="col-sm-12 mdl-input-group">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="sample3">
+                  <input class="mdl-textfield__input" type="text" id="company_contact">
                   <label class="mdl-textfield__label" for="sample3">Company</label>
                 </div>
               </div>
               <div class="col-sm-12 mdl-input-group">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="sample3">
+                  <input class="mdl-textfield__input" type="text" id="phone_contact">
                   <label class="mdl-textfield__label" for="sample3">Phone</label>
                 </div>
               </div>
               <div class="col-sm-12 mdl-input-group m-b-16">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="sample3">
+                  <input class="mdl-textfield__input" type="text" id="message_contact">
                   <label class="mdl-textfield__label" for="sample3">Message</label>
                 </div>
+              </div>
+              <div class="col-md-12 text-left">
+                <p id="contact_error_message" style="color:red"></p>
               </div>
               <div class="col-sm-12 p-0">
                 <div class="col-sm-6 col-xs-6 p-0">
                   <p><i class="mdi mdi-mandatory"></i>Required</p>
                 </div>
                 <div class="col-sm-6 col-xs-6 text-right p-0">
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect morado br-20 m-r-0">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect morado br-20 m-r-0" onclick="contact_us()">
                     SUBMIT
                   </button>
                 </div>
@@ -470,7 +476,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN" id="comapny_schedule_modal">
+                      <input type="text" class="form-control" placeholder="Company name" aria-describedby="nameN" id="company_schedule_modal">
                       <span class="input-group-btn">
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                       </span>
@@ -483,6 +489,9 @@
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-0 height-45 morado p-0" type="button" tabindex="-1"><i class="mdi mdi-done"></i></button>
                       </span>
                     </div>
+                  </div>
+                  <div class="col-md-12 text-left">
+                    <p id="schedule_modal_error_message" style="color:red"></p>
                   </div>
                   <div class="col-md-12 text-center">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="call_me_back(2)"><i class="fa fa-paper-plane-o"></i>Call me back!</button>
