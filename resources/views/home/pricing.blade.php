@@ -10,47 +10,48 @@
     <meta name="theme-color" content="#ffffff">
     <title>Arbi Augmented Reality platform!</title>
 
-    <link rel="shortcut icon" href="public/images/favicon1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('homepage/images/favicon1.png') }}" type="image/x-icon">
 
-    <link rel="manifest" href="public/images/favicon/manifest.json">
-    <link rel="stylesheet" href="public/components/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/fonts/material-icons.css">
-    <link rel="stylesheet" href="public/fonts/Material-Icons-new.css">
-    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/components/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="public/components/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="public/components/wizard/css/wizard.css">
-    <link rel="stylesheet" href="public/components/mdl/css/material.min.css">
-    <link rel="stylesheet" href="public/css/m-p.css">
-    <link rel="stylesheet" href="public/css/arbi.css">
+    <link rel="manifest" href="{{ asset('homepage/images/favicon/manifest.json') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/components/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/fonts/material-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/fonts/Material-Icons-new.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/fonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/components/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/components/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/components/wizard/css/wizard.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/components/mdl/css/material.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/css/m-p.css') }}">
+    <link rel="stylesheet" href="{{ asset('homepage/css/arbi.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top text-center navbarcolor">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button id="nav-icon3" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect call-me" data-toggle="modal" data-target="#Schedule">Schedule a call-back</a>
-          <a class="navbar-brand" href="home.html"><i class="mdi mdi-logo_nuevo"></i></a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="link-bottom"><a href="feature.html">Features</a></li>
-            <li class="link-bottom"><a href="home.html#pricing">Pricing</a></li>
-            <li class="link-bottom"><a href="blog.html">Blog</a></li>
-            <li class="link-bottom"><a href="home.html#contact_us">Contact</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Login</a></li>
-          </ul>
-        </div>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button id="nav-icon3" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect call-me" data-toggle="modal" data-target="#Schedule">Schedule a call-back</a>
+        <a class="navbar-brand" href="home.html"><i class="mdi mdi-logo_nuevo"></i></a>
       </div>
-    </nav>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="link-bottom"><a href="feature.html">Features</a></li>
+          <li class="link-bottom"><a href="home.html#pricing">Pricing</a></li>
+          <li class="link-bottom"><a href="blog.html">Blog</a></li>
+          <li class="link-bottom"><a href="home.html#contact_us">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 	<section>
 		
@@ -154,7 +155,7 @@
 			            </div>
 		    		</div>
 		    	</div>
-		    	<div class="mdl-card mdl-card-summary">
+		    	<div class="mdl-card mdl-card-summary hidden">
 		    		<div class="mdl-card__supporting-text p-rl-0 checkout">
 						<div class="col-md-12 p-0">
 							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
@@ -230,11 +231,11 @@
         </div>     
     </div>
 
-    <script src="public/components/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-    <script src="public/components/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="public/components/mdl/js/material.min.js"></script>
-    <script src="public/components/wizard/js/jquery.bootstrap.wizard.min.js"></script>
-    <script src="public/components/OwlCarousel2-2.2.1/dist/owl.carousel.min.js"></script>
-    <script src="public/js/jspricing.js"></script>
+    <script src="{{ asset('homepage/components/jquery-3.2.1/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('homepage/components/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('homepage/components/mdl/js/material.min.js') }}"></script>
+    <script src="{{ asset('homepage/components/wizard/js/jquery.bootstrap.wizard.min.js') }}"></script>
+    <script src="{{ asset('homepage/components/OwlCarousel2-2.2.1/dist/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('homepage/js/jspricing.js') }}"></script>
 </body>
 </html>

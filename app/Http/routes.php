@@ -18,3 +18,5 @@ Route::post('/home/contactUsMethod', 'Home\HomeController@contactUs');
 
 Route::get('/login', 'Home\LoginController@index');
 Route::post('/login/loginMethod', 'Home\LoginController@login');
+
+Route::get('/pricing', 'Home\PricingController@index');
