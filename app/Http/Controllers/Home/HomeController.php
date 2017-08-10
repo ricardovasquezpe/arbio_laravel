@@ -79,4 +79,16 @@ class HomeController extends Controller {
         }
         echo json_encode(array_map('utf8_encode', $data));
     }
+
+    public function goToPricingPage(){
+        $idPricing = $_POST['pricing'];
+        $data['status'] = false;
+        if($idPricing == "1" || $idPricing == "2"){
+            $data['status'] = true;
+            $data['url']    = "pricing";
+            $data['pricing'] = $idPricing;
+            Session::flash('id_pricing', $idPricing);
+        }
+        echo json_encode(array_map('utf8_encode', $data));
+    }
 }

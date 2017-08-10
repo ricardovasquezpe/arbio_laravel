@@ -162,3 +162,21 @@ function contact_us(){
 		}
 	});
 }
+
+function go_to_pricing(pricing){
+	$.ajax({
+		data : {
+			_token  : $('meta[name="csrf-token"]').attr('content'),
+			pricing : pricing
+		},
+		url : 'home/goToPricingPage',
+		async : true,
+		type : 'POST'
+	}).done(
+	function(data) {
+		data = JSON.parse(data);
+		if(data.status == true){
+			window.location.href = data.url;
+		}
+	});
+}

@@ -286,7 +286,7 @@
                   <li>EMAIL SUPPORT</li>
                 </ul>
               </div>
-              <a href="pricing.html"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0">SIGN UP</button></a>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="go_to_pricing(1)">SIGN UP</button>
             </div>
             <div class="mdl-card mdl-card-pricing">
               <div class="mdl-card__title">
@@ -303,7 +303,7 @@
                   <li>CLIENT TRAINING</li>
                 </ul>
               </div>
-              <a href="pricing.html"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0">SIGN UP</button></a>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect register height-45 m-0" onclick="go_to_pricing(2)">SIGN UP</button>
             </div>
             <div class="mdl-card mdl-card-pricing">
               <div class="mdl-card__title">
